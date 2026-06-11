@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>园区门禁人脸识别办理</title>
+    <link href='https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css' rel='stylesheet'>
+    <link href='https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'>
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class='text-gray-800 pb-10'>
+    <div class='top-navbar px-4 py-3 flex items-center'>
+        <a href='javascript:history.back()' class='text-gray-500 hover:text-blue-600 px-2 py-1'><i class='fa-solid fa-arrow-left text-lg'></i></a>
+        <h2 class='ml-3 font-bold text-lg truncate'>园区门禁人脸识别办理</h2>
+    </div>
+
+    <div class='p-5 space-y-4'>
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-diagram-project text-yellow-500 mr-2'></i>流程示意图</h3>
+            <div class='mermaid text-xs sm:text-sm'>
+                graph TD
+A([办理入职手续后]) --> B[自行联系部门联系人]
+B --> C[填写区域授权名单]
+C --> D[联系人引导新员工至技防室]
+D --> E([录入人脸并同时开通大门及楼宇权限])
+style A fill:#fef08a,stroke:#eab308
+style E fill:#fef08a,stroke:#eab308,stroke-width:2px
+            </div>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-list-ul text-blue-500 mr-2'></i>基本信息</h3>
+            <ul class='space-y-2 text-gray-600'>
+                <li><strong class='text-gray-700'>适用场景：</strong>新员工开通进入园区大门及各对应授权楼宇的门禁权限。</li>
+                <li><strong class='text-gray-700'>操作入口：</strong>线下联系部门接口人</li>
+            </ul>
+        </div>
+
+                <div class='bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm'>
+            <h3 class='font-bold text-yellow-800 mb-2 flex items-center'><i class='fa-solid fa-circle-exclamation text-yellow-600 mr-2'></i>提示</h3>
+            <p class='text-yellow-700 mb-3'>凭证需求：需依据提供明确进出楼宇的园区授权名单进行录入授权（请联系本部门授权联系人）。</p>
+            
+            <details class="bg-yellow-100/50 rounded-lg border border-yellow-200/50 overflow-hidden group">
+                <summary class="font-bold text-yellow-800 p-3 cursor-pointer outline-none select-none flex items-center justify-between hover:bg-yellow-200/30">
+                    <span class="flex items-center"><i class="fa-solid fa-address-book mr-2 text-yellow-600"></i>各部门门禁授权联系人检索 (28个)</span>
+                    <i class="fa-solid fa-chevron-down text-xs opacity-50 transition-transform group-open:-rotate-180"></i>
+                </summary>
+                <div class="px-3 pb-3 pt-1 space-y-1 max-h-64 overflow-y-auto">
+                    
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">民机工程管理部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">井晗</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">导航部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">丁蓬勃</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">飞控部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">呼延思佳</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">动力中心</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">桑鹏朝</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">机电工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">胡丽君</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">软件部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">王玮</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">供应链管理部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">刘笑笑</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">生产运营部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">张天赐</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">产品工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">郭莹</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">外场部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">梁勇</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">创新中心</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">洪丹丹</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">规划发展部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">戴宁</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">制导系统部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">郑龙飞</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">电子部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">张文怡</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">天创航空</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">薛婷</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">益翔航电</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">操锐</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">基础管理与信息化部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">罗洁</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">微系统工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">陈雪冰</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">党建文宣部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">刘璐</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">财务部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">关婷</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">光学部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">赵思浓</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">制造工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">胡荣</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">元器件可靠中心</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">王德辉</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">保障部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">董小满</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">防务工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">陈莜萱</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">恒翔</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">曹艺瀚</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">人力资源部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">魏龙</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-yellow-200/50 last:border-0 hover:bg-yellow-50/50 px-1 rounded transition-colors">
+                            <span class="text-yellow-900 font-medium">质量管理与工程部</span>
+                            <span class="text-orange-600 font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-orange-100 text-xs">赵军婷</span>
+                        </div>
+                </div>
+            </details>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <strong class='text-gray-800 block mb-2'><i class='fa-solid fa-users text-gray-400 mr-1'></i>相关责任人</strong>
+            <div class='space-y-3'>
+                
+        <div class="flex items-center justify-between">
+            <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">保障部：余佳明</span>
+            <a href="tel:13389187249" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">13389187249</a>
+        </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js'></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

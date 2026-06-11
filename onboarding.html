@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>入职须知</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: 80px;
+        
+            font-size: 16px;
+            line-height: 1.5;}
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #0c4a6e;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            color: #64748b;
+            align-items: center;
+        }
+        
+        .avatar-small {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #a5f3fc;
+            color: #0c4a6e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 20px 30px 40px 30px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            color: #475569;
+        }
+
+        .section-container {
+            padding: 0 20px;
+        }
+
+        .onboarding-card {
+            background-color: white;
+            border-radius: 40px;
+            padding: 30px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        /* Using pseudo-elements for the color blobs in background */
+        .onboarding-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .card-blue::before { background-color: #e0f2fe; }
+        .card-green::before { background-color: #dcfce7; }
+        .card-orange::before { background-color: #ffedd5; }
+
+        .card-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .card-icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            z-index: 10;
+        }
+
+        .icon-blue { background-color: #7dd3fc; color: #0c4a6e; }
+        .icon-green { background-color: #bbf7d0; color: #064e3b; }
+        .icon-orange { background-color: #fdba74; color: #7c2d12; }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0f172a;
+            z-index: 10;
+            position: relative;
+        }
+
+        .card-desc {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .pill {
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+        
+        .action-button-container {
+            padding: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background-color: #0f766e;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 6px -1px rgba(15, 118, 110, 0.4);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .reading-time {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 15px 0;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 12px;
+            gap: 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .nav-item.active {
+            background-color: #cffafe;
+            color: #0891b2;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-top">
+        <a href="index.html" style="color: inherit; text-decoration: none;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <span>Onboarding Guide</span>
+        <div class="header-actions">
+            <div class="avatar-small">
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h1 class="hero-title">入职须知</h1>
+        <div class="hero-subtitle">开启你在团队的精彩旅程</div>
+    </div>
+
+    <div class="section-container">
+        <a href="onboarding-work.html" class="onboarding-card card-blue">
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-blue">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="card-title">工作篇</div>
+            </div>
+            <div class="card-desc">掌握办公系统、熟悉工作节奏与各类流程入口，确保高效融入。</div>
+            <div class="pill-container">
+                <span class="pill">办公系统</span>
+                <span class="pill">工作流程</span>
+                <span class="pill">协作工具</span>
+            </div>
+        </a>
+
+        <a href="onboarding-life.html" class="onboarding-card card-green">
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-green">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+                <div class="card-title">生活篇</div>
+            </div>
+            <div class="card-desc">了解园区内的交通接驳、餐饮美食、住宿安排及各项便利服务。</div>
+            <div class="pill-container">
+                <span class="pill">通勤班车</span>
+                <span class="pill">员工餐厅</span>
+                <span class="pill">健身房</span>
+            </div>
+        </a>
+
+        <a href="onboarding-conduct.html" class="onboarding-card card-orange">
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-orange">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div class="card-title">行为规范</div>
+            </div>
+            <div class="card-desc">秉持职业精神，遵守沟通礼仪与日常办公规范，共建良好氛围。</div>
+            <div class="pill-container">
+                <span class="pill">职业道德</span>
+                <span class="pill">沟通准则</span>
+                <span class="pill">安保规定</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="action-button-container">
+        <a href="index.html" class="primary-btn">我已了解，进入新手村</a>
+        <div class="reading-time">阅读时间约 5 分钟</div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house nav-icon"></i>
+            <span>首页</span>
+        </a>
+        <a href="onboarding.html" class="nav-item active">
+            <i class="fa-solid fa-book nav-icon"></i>
+            <span>入职指南</span>
+        </a>
+        <a href="process.html" class="nav-item">
+            <i class="fa-solid fa-diagram-project nav-icon"></i>
+            <span>业务流程</span>
+        </a>
+        <a href="knowledge.html" class="nav-item">
+            <i class="fa-solid fa-book-journal-whills nav-icon"></i>
+            <span>知识库</span>
+        </a>
+    </nav>
+</body>
+
+</html>

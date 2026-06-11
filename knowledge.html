@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>知识库</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: 80px;
+        
+            font-size: 16px;
+            line-height: 1.5;}
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #0c4a6e;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            color: #64748b;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 0 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #cffafe;
+            color: #0369a1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 26px;
+            font-weight: bold;
+            color: #020617;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .section-container {
+            padding: 0 20px;
+        }
+
+        .knowledge-card {
+            background-color: white;
+            border-radius: 40px;
+            padding: 30px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.03);
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .card-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .icon-cyan { background-color: #cffafe; color: #0891b2; }
+        .icon-green { background-color: #dcfce7; color: #16a34a; }
+        .icon-orange { background-color: #ffedd5; color: #ea580c; }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 15px;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .card-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .card-header-flex .card-title {
+            margin-bottom: 0;
+            font-size: 22px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            z-index: 10;
+            position: relative;
+            width: 80%;
+        }
+
+        .card-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .card-action-btn.btn-cyan { background-color: #f0fdfa; color: #0891b2; }
+        .card-action-btn.btn-green { background-color: #f0fdf4; color: #16a34a; }
+        .card-action-btn.btn-orange { background-color: #fff7ed; color: #ea580c; }
+
+        .watermark-icon {
+            position: absolute;
+            right: -10px;
+            bottom: -10px;
+            font-size: 120px;
+            color: #f1f5f9;
+            z-index: 1;
+            transform: rotate(-10deg);
+        }
+
+        /* Recent Updates Section */
+        .updates-header {
+            margin: 30px 20px 20px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .updates-indicator {
+            width: 6px;
+            height: 20px;
+            background-color: #0c4a6e;
+            border-radius: 3px;
+        }
+
+        .updates-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        .update-item {
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            margin: 0 20px 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .update-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0fdfa;
+            color: #0891b2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .update-icon-video {
+            background-color: #f0fdf4;
+            color: #0f766e;
+        }
+
+        .update-content {
+            flex: 1;
+        }
+
+        .update-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 5px;
+        }
+
+        .update-meta {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .update-action {
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 15px 0;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 12px;
+            gap: 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .nav-item.active {
+            background-color: #cffafe;
+            color: #0891b2;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-top">
+        <a href="index.html" style="color: inherit; text-decoration: none;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <span>知识库</span>
+        <div class="header-actions">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-icon-circle">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+        <h1 class="hero-title">企业学习手册</h1>
+        <div class="hero-subtitle">探索核心知识，掌握关键流程，建立专业职场防线。</div>
+    </div>
+
+    <div class="section-container">
+        <a href="knowledge-confidentiality.html" class="knowledge-card">
+            <i class="fa-solid fa-shield-check watermark-icon" style="right: -20px;"></i>
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-cyan">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="card-title">保密</div>
+            </div>
+            <div class="card-desc">保密制度、涉密行为与风险防控。了解如何保护公司核心资产与个人信息安全。</div>
+            <div class="card-action-btn btn-cyan">
+                <span>立即学习</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </a>
+
+        <a href="knowledge-discipline.html" class="knowledge-card">
+            <i class="fa-solid fa-scale-balanced watermark-icon"></i>
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-green">
+                    <i class="fa-solid fa-gavel"></i>
+                </div>
+                <div class="card-title">纪检</div>
+            </div>
+            <div class="card-desc">廉洁从业、纪法红线与监督要求。坚守底线思维，共同维护公平透明的职场环境。</div>
+            <div class="card-action-btn btn-green">
+                <span>阅读指南</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </a>
+
+        <a href="knowledge-safety.html" class="knowledge-card">
+            <i class="fa-solid fa-asterisk watermark-icon" style="font-size: 150px; right: -30px; bottom: -40px;"></i>
+            <div class="card-header-flex">
+                <div class="card-icon-box icon-orange">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <div class="card-title">安全</div>
+            </div>
+            <div class="card-desc">生产安全、消防安全与应急常识。掌握必要的急救知识与逃生技能。</div>
+            <div class="card-action-btn btn-orange">
+                <span>立即了解</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </a>
+    </div>
+
+
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house nav-icon"></i>
+            <span>首页</span>
+        </a>
+        <a href="onboarding.html" class="nav-item">
+            <i class="fa-solid fa-book nav-icon"></i>
+            <span>入职指南</span>
+        </a>
+        <a href="process.html" class="nav-item">
+            <i class="fa-solid fa-diagram-project nav-icon"></i>
+            <span>业务流程</span>
+        </a>
+        <a href="knowledge.html" class="nav-item active">
+            <i class="fa-solid fa-book-journal-whills nav-icon"></i>
+            <span>知识库</span>
+        </a>
+    </nav>
+</body>
+
+</html>

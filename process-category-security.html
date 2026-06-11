@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>保障部综合流程 (11项)</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .module-card:active { transform: scale(0.98); transition: transform 0.1s; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="process.html" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">保障部综合流程 (11项)</h2>
+    </div>
+    <div class="p-5">
+        
+<p class="text-sm text-gray-500 mb-4">保障部门业务涵盖IT、车辆、门禁及宿舍等：</p>
+
+<a href="sec-process-tips.html" class="block bg-white p-4 rounded-xl shadow-sm flex justify-between items-center module-card border-l-4 border-teal-500 mb-4">
+    <div><h3 class="font-bold text-gray-800 flex items-center"><i class="fa-solid fa-clipboard-list text-teal-500 mr-2"></i> 部门须知与常见问题</h3><p class="text-xs text-gray-400 mt-1">医疗、餐补、试验与常见规范</p></div><i class="fa-solid fa-chevron-right text-gray-300"></i>
+</a>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="sec-list">
+</div>
+<script>
+const secItems = [
+    { name: "信息设备维修申请", desc: "含办公自动化设备出现硬件问题", icon: "fa-computer", color: "blue" },
+    { name: "新机领用", desc: "新员工入职领取计算机", icon: "fa-laptop-code", color: "indigo" },
+    { name: "环境试验任务申请", desc: "个人申请及外协单位实验申请", icon: "fa-flask", color: "purple" },
+    { name: "会议室预订", desc: "企业微信自主会议室预订", icon: "fa-handshake", color: "green" },
+    { name: "用印申请 (保卫处)", desc: "政审及户籍等审批申请", icon: "fa-stamp", color: "red" },
+    { name: "园区门禁人脸识别", desc: "新员工权限与楼宇人脸采集", icon: "fa-face-scan", color: "yellow" },
+    { name: "物流车辆进入流程", desc: "来访物流卸货/核验单填报", icon: "fa-truck", color: "orange" },
+    { name: "个人车辆入所申请", desc: "员工本人及直系亲属私家车入园", icon: "fa-car", color: "teal" },
+    { name: "外来人员入所申请", desc: "扫码、接访及部门领导审批", icon: "fa-id-card-clip", color: "pink" },
+    { name: "公寓退宿申请流", desc: "物品清理与物业宿管交接", icon: "fa-house-circle-xmark", color: "rose" },
+    { name: "公寓设备设施维修", desc: "微信保修站填写维修明细", icon: "fa-wrench", color: "slate" }
+];
+
+// 根据列表动态生成HTML
+const listHtml = secItems.map((item, idx) => `
+    <a href="sec-process-${idx+1}.html" class="block bg-white p-4 rounded-xl shadow-sm flex items-center module-card border-l-4 border-${item.color}-500">
+        <div class="bg-${item.color}-50 text-${item.color}-500 p-2 rounded mr-3 w-10 h-10 flex items-center justify-center shrink-0"><i class="fa-solid ${item.icon} text-lg"></i></div>
+        <div class="flex-1 overflow-hidden">
+            <h3 class="font-bold text-gray-800 text-sm whitespace-nowrap truncate">${idx+1}. ${item.name}</h3>
+            <p class="text-xs text-gray-400 mt-0.5 whitespace-nowrap truncate">${item.desc}</p>
+        </div>
+        <i class="fa-solid fa-chevron-right text-gray-300 text-sm ml-2"></i>
+    </a>
+`).join('');
+document.getElementById('sec-list').innerHTML = listHtml;
+</script>
+
+    </div>
+</body>
+</html>

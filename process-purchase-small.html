@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>零星申购流程</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">零星申购流程</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-purple-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+                graph TD
+                A[登录SMS系统] --> B[进入采购管理器材请购单录入]
+                B --> C[填写主表信息]
+                C --> D[填写联系方式和预算科目]
+                D --> E[保存主表信息]
+                E --> F[选择手工录入明细]
+                F --> G[填写物料明细数量和日期]
+                G --> H[保存明细并点击我要送审]
+                H --> I[送审至部门领导审批]
+                style A fill:#e9d5ff,stroke:#a855f7
+                style I fill:#e9d5ff,stroke:#a855f7,stroke-width:2px
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>无订单、试验、补订等器材零星采购</li>
+                <li><strong class="text-gray-700">操作入口：</strong>SMS系统 ➡️ 采购管理 ➡️ 器材请购单录入</li>
+            </ul>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-yellow-600 mr-2"></i>注意事项 & 避坑指南</h3>
+            <ul class="list-disc pl-5 space-y-1 text-yellow-700">
+                <li>主表中所有带 <strong>"*"</strong> 号项必填。预算科目、课题号需正确选择。</li>
+                <li>由于是手工录入明细操作，请一次性批量输入所有需求数量、单价与需求日期。</li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm flex items-center justify-between">
+            <div>
+                <strong class="text-gray-800 block mb-1">相关责任人</strong>
+                <span class="text-gray-600">陈文波</span>
+            </div>
+            <a href="tel:15991678133" class="bg-blue-50 text-blue-600 px-3 py-2 rounded-lg font-bold"><i class="fa-solid fa-phone mr-1"></i> 15991678133</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

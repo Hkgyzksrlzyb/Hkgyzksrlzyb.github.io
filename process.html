@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>业务流程及常见问题</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #f8fafc;
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: 80px;
+        
+            font-size: 16px;
+            line-height: 1.5;}
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #1e293b;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            color: #64748b;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #a5f3fc 0%, #cffafe 100%);
+            border-radius: 40px;
+            padding: 40px 20px 60px 20px;
+            margin: 0 20px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0c4a6e;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: #0369a1;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .hero-image-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #1e293b;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-container {
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .department-card {
+            background-color: white;
+            border-radius: 30px;
+            padding: 25px;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .department-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .icon-blue { background-color: #e0f2fe; color: #0284c7; }
+        .icon-green { background-color: #dcfce7; color: #16a34a; }
+        .icon-orange { background-color: #ffedd5; color: #ea580c; }
+        .icon-purple { background-color: #f3e8ff; color: #9333ea; }
+
+        .tag {
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .dept-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .dept-desc {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            background-color: #f1f5f9;
+            color: #64748b;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* FAQ Section */
+        .faq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 20px 15px 20px;
+        }
+        
+        .faq-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .faq-more {
+            color: #0284c7;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .faq-item {
+            background-color: #f1f5f9;
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin: 0 20px 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-icon {
+            color: #0c4a6e;
+            font-size: 18px;
+        }
+
+        .faq-text {
+            flex: 1;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .faq-arrow {
+            color: #cbd5e1;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 15px 0;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 12px;
+            gap: 5px;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .nav-item.active {
+            background-color: #cffafe;
+            color: #0891b2;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-top">
+        <a href="index.html" style="color: inherit; text-decoration: none;">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <span>业务流程及常见问题</span>
+        <div class="header-actions">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+    </div>
+
+    <div class="hero-banner">
+        <div class="hero-title">入职引导与业务全景</div>
+        <div class="hero-subtitle">为您梳理各部门核心业务流程，助<br>您快速融入，高效协同。</div>
+        
+    </div>
+
+    <div class="section-container">
+        <a href="process-category-general.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-blue">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+            <div class="dept-title">综合管理部</div>
+            <ul class="dept-desc list-disc pl-5">
+                <li>用印申请</li>
+                <li>技术文稿审查</li>
+            </ul>
+        </a>
+
+        <a href="process-category-plan.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-green">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+            </div>
+            <div class="dept-title">规划发展部</div>
+            <div class="dept-desc">组织架构及职能职责查询，了解团队运作逻辑与岗位定义。</div>
+        </a>
+
+        <a href="process-category-finance.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-orange">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                </div>
+                <div class="flex -space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white"></div>
+                    <div class="w-8 h-8 rounded-full bg-slate-400 border-2 border-white"></div>
+                </div>
+            </div>
+            <div class="dept-title">财务部</div>
+            <div class="dept-desc">各项费用线上线下报销流程指南，确保您的收支合规透明。</div>
+        </a>
+
+        <a href="process-category-hr.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-blue">
+                    <i class="fa-solid fa-id-badge"></i>
+                </div>
+            </div>
+            <div class="dept-title">人力资源部</div>
+            <div class="pill-container">
+                <span class="pill">落户介绍信</span>
+                <span class="pill">在职证明</span>
+                <span class="pill">上岗审查</span>
+            </div>
+        </a>
+
+        <a href="process-category-digital.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-green">
+                    <i class="fa-solid fa-print"></i>
+                </div>
+            </div>
+            <div class="dept-title">流程体系与数字化部</div>
+            <div class="dept-desc">非密/涉密打印、复印、刻盘等数字化办公支持。</div>
+        </a>
+
+        <a href="process-category-admin.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-orange">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+            </div>
+            <div class="dept-title">防务工程管理部</div>
+            <div class="dept-desc">休假申请、技术协调单用印等专项工程管理流程。</div>
+        </a>
+        
+        <a href="process-category-op.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-purple">
+                    <i class="fa-solid fa-industry"></i>
+                </div>
+            </div>
+            <div class="dept-title">生产运营部</div>
+            <div class="dept-desc">内外协、公文打印、投产及用车预订。</div>
+        </a>
+
+        <a href="process-category-supply.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-blue">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+            </div>
+            <div class="dept-title">供应链管理部</div>
+            <div class="dept-desc">工装、资产设备、物资申购。</div>
+        </a>
+
+        <a href="process-category-security.html" class="department-card">
+            <div class="card-header">
+                <div class="icon-box icon-green">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+            <div class="dept-title">保障部</div>
+            <div class="dept-desc">门禁、车辆、IT维修、会议等11项。</div>
+        </a>
+    </div>
+
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house nav-icon"></i>
+            <span>首页</span>
+        </a>
+        <a href="onboarding.html" class="nav-item">
+            <i class="fa-solid fa-book nav-icon"></i>
+            <span>入职指南</span>
+        </a>
+        <a href="process.html" class="nav-item active">
+            <i class="fa-solid fa-diagram-project nav-icon"></i>
+            <span>业务流程</span>
+        </a>
+        <a href="knowledge.html" class="nav-item">
+            <i class="fa-solid fa-book-journal-whills nav-icon"></i>
+            <span>知识库</span>
+        </a>
+    </nav>
+</body>
+
+</html>

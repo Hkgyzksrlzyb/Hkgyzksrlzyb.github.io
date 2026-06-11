@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>休假申请流程</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">休假申请流程</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <!-- 可视化流程图 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-green-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+                graph TD
+                    A([登录系统提交申请]) --> B[填写请假信息及事由]
+                    B --> C{是否特殊或长假?}
+                    C -->|病假>5天等特殊假| D[上传证明附件]
+                    C -->|普通事假等| E[提交直属领导审批]
+                    D --> E
+                    E --> F[领导审批通过]
+                    F --> G([开始休假])
+                    
+                    style A fill:#dcfce7,stroke:#22c55e
+                    style G fill:#bbf7d0,stroke:#16a34a,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>新员工入职后首次请假</li>
+                <li><strong class="text-gray-700">操作入口：</strong>企业微信-工作台-休假申请 或 人力生态系统-考勤管理-休假申请</li>
+                <li><strong class="text-gray-700">所需材料：</strong>产假、工伤假、哺乳假以及超过5天的病假需上传证明附件。</li>
+            </ul>
+        </div>
+
+        <!-- 避坑与注意 -->
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-yellow-600 mr-2"></i>注意事项 & 避坑指南</h3>
+            <p class="text-yellow-700 mb-2"><strong>注意事项：</strong>请假前可阅读《员工休假管理办法》了解休假规定、要求和待遇。</p>
+            <div class="bg-yellow-100 p-3 rounded text-yellow-800 mt-2">
+                <strong class="block mb-1"><i class="fa-solid fa-skull-crossbones mr-1"></i>历史错误案例：</strong>
+                未履行休假手续，未打卡，被系统记为旷工，产生缺勤扣款！
+            </div>
+        </div>
+
+        <!-- 联系人 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm flex items-center justify-between">
+            <div>
+                <strong class="text-gray-800 block mb-1">责任人/接口人 (人力)</strong>
+                <span class="text-gray-600">陈潇楠</span>
+            </div>
+            <a href="tel:13299082031" class="bg-green-100 text-green-600 px-3 py-2 rounded-lg font-bold"><i class="fa-solid fa-phone mr-1"></i> 13299082031</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</body>
+</html>

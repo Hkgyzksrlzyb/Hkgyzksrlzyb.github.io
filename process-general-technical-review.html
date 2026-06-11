@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>技术文稿审查</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1"><i class="fa-solid fa-arrow-left text-lg"></i></a>
+        <h2 class="ml-3 font-bold text-lg truncate">技术文稿审查</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-orange-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+graph TD
+A[首页进入综合办公] --> B[业务申请]
+B --> C[保密管理]
+C --> D[技术文稿审查表]
+D --> E[部门领导审批]
+E --> F[科技委审批]
+F --> G[定密责任人保密办审批]
+G --> H[流程部导出文稿]
+style A fill:#ffedd5,stroke:#f97316
+style H fill:#ffedd5,stroke:#f97316,stroke-width:2px
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>新员工入职后首次申请技术文稿审查。</li>
+                <li><strong class="text-gray-700">操作入口：</strong>首页 → 综合办公 → 业务申请 → 保密管理 → 技术文稿审查表</li>
+                <li><strong class="text-gray-700">所需材料：</strong>技术文稿、论文等</li>
+            </ul>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-circle-exclamation text-yellow-600 mr-2"></i>注意事项</h3>
+            <p class="text-yellow-700">文稿密级通常为公开；若需报销版面费，请在科技知识管理系统中另行提交论文报销申请。</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

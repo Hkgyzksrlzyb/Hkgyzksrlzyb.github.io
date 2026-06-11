@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>技术协调单用印</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">技术协调用印流程</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <!-- 可视化流程图 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-blue-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+                graph TD
+                    A([PDM完成线上审批]) --> B[纸质单完成设计师审签]
+                    B --> C[去防务工程管理部用印]
+                    C --> D([用印完毕, 流程部归档])
+
+                    style A fill:#dbeafe,stroke:#3b82f6
+                    style B fill:#dbeafe,stroke:#3b82f6
+                    style D fill:#f3f4f6,stroke:#9ca3af,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>新员工首次申请技术协调单用印</li>
+                <li><strong class="text-gray-700">操作入口：</strong>1. PDM上完成流程审批<br>2. 纸质单上完成设计师系统审签</li>
+                <li><strong class="text-gray-700">所需材料：</strong>已走完 PDM 流程和纸质审签的技术协调单。</li>
+            </ul>
+        </div>
+
+        <!-- 避坑与注意 -->
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-yellow-600 mr-2"></i>注意事项 & 避坑指南</h3>
+            <ul class="list-decimal list-inside text-yellow-700 mb-3 space-y-1">
+                <li>PDM线上流程审批和线下纸质审签<strong>均已完成</strong>，方可用印。</li>
+                <li>用印完毕<strong>务必归档</strong>。</li>
+                <li>外来协调单和自己发起的协调单均需走流程。</li>
+            </ul>
+            <div class="bg-yellow-100 p-3 rounded text-yellow-800 mt-2">
+                <strong class="block mb-1"><i class="fa-solid fa-skull-crossbones mr-1"></i>历史错误案例：</strong>
+                1. 未完成线上审批或线下审签，导致无法用印。<br>
+                2. 未归档导致项目审核时被开具【不符合项】。
+            </div>
+        </div>
+
+        <!-- 联系人 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm grid grid-cols-2 gap-3">
+            <div class="border-r border-gray-100 pr-3">
+                <strong class="text-gray-800 block text-xs mb-1">接口人(防务管理)</strong>
+                <span class="text-gray-600 text-sm block">张春</span>
+                <a href="tel:02961888559" class="text-blue-600 font-bold block mt-1"><i class="fa-solid fa-phone"></i> 029-61888559</a>
+            </div>
+            <div class="pl-2">
+                <strong class="text-red-600 block text-xs mb-1">紧急联系人</strong>
+                <span class="text-gray-600 text-sm block">蒋樱子</span>
+                <a href="tel:02961888659" class="text-red-500 font-bold block mt-1"><i class="fa-solid fa-phone"></i> 029-61888659</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</body>
+</html>

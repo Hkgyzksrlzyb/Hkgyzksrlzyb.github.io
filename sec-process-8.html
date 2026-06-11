@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>个人车辆入所申请</title>
+    <link href='https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css' rel='stylesheet'>
+    <link href='https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'>
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class='text-gray-800 pb-10'>
+    <div class='top-navbar px-4 py-3 flex items-center'>
+        <a href='javascript:history.back()' class='text-gray-500 hover:text-blue-600 px-2 py-1'><i class='fa-solid fa-arrow-left text-lg'></i></a>
+        <h2 class='ml-3 font-bold text-lg truncate'>个人车辆入所申请</h2>
+    </div>
+
+    <div class='p-5 space-y-4'>
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-diagram-project text-teal-500 mr-2'></i>流程示意图</h3>
+            <div class='mermaid text-xs sm:text-sm'>
+                graph TD
+A([进入 园区车辆服务]) --> B[点选 个人信息]
+B --> C[填写 添加车辆信息]
+C --> D[准备行驶证等证件前往保安室]
+D --> E([在所申请园区保安室提交复印件办理])
+style A fill:#ccfbf1,stroke:#14b8a6
+style E fill:#ccfbf1,stroke:#14b8a6,stroke-width:2px
+            </div>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-list-ul text-blue-500 mr-2'></i>基本信息</h3>
+            <ul class='space-y-2 text-gray-600'>
+                <li><strong class='text-gray-700'>适用场景：</strong>员工个人车辆入所、停放权限申请。</li>
+                <li><strong class='text-gray-700'>操作入口：</strong>企业微信 — 工作台 — 园区车辆服务</li>
+            </ul>
+        </div>
+
+        <div class='bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm'><h3 class='font-bold text-yellow-800 mb-2 flex items-center'><i class='fa-solid fa-circle-exclamation text-yellow-600 mr-2'></i>资格审查避坑</h3><ul class='list-disc pl-5 space-y-1 text-yellow-700'><li>只有本人及直系亲属名下的汽车才可以申请入所！</li><li>本人名下的汽车，须携带行驶证到保安室处提交复印件。</li><li>若是直系亲属，则额外还需携带户口本，以证明关系。</li></ul></div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <strong class='text-gray-800 block mb-2'><i class='fa-solid fa-users text-gray-400 mr-1'></i>相关责任人</strong>
+            <div class='space-y-3'>
+                
+        <div class="flex items-center justify-between">
+            <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">保障部：黄浩楠</span>
+            <a href="tel:18429012923" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">18429012923</a>
+        </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js'></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

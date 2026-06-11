@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>外来人员入所申请</title>
+    <link href='https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css' rel='stylesheet'>
+    <link href='https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'>
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class='text-gray-800 pb-10'>
+    <div class='top-navbar px-4 py-3 flex items-center'>
+        <a href='javascript:history.back()' class='text-gray-500 hover:text-blue-600 px-2 py-1'><i class='fa-solid fa-arrow-left text-lg'></i></a>
+        <h2 class='ml-3 font-bold text-lg truncate'>外来人员入所申请</h2>
+    </div>
+
+    <div class='p-5 space-y-4'>
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-diagram-project text-pink-500 mr-2'></i>流程示意图</h3>
+            <div class='mermaid text-xs sm:text-sm'>
+                graph TD
+A([外来人员扫门口接访二维码]) --> B["填写接待人手机号(须一致)提交"]
+B --> C[接待人企业微信收到审批通知]
+C --> D[接待人填写去向并同意]
+D --> E[所属部门领导审批]
+E --> F([扫码刷证件进入])
+style A fill:#fce7f3,stroke:#ec4899
+style F fill:#fce7f3,stroke:#ec4899,stroke-width:2px
+            </div>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-list-ul text-blue-500 mr-2'></i>基本信息</h3>
+            <ul class='space-y-2 text-gray-600'>
+                <li><strong class='text-gray-700'>适用场景：</strong>外部访客、协作人员等进入园区申请。</li>
+                <li><strong class='text-gray-700'>操作入口：</strong>园区门口接待室扫描二维码</li>
+            </ul>
+        </div>
+
+        <div class='bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm'><h3 class='font-bold text-yellow-800 mb-2 flex items-center'><i class='fa-solid fa-circle-exclamation text-yellow-600 mr-2'></i>操作提醒</h3><p class='text-yellow-700'>注意提醒访客，填写的接待人电话必须与企业微信号码完全一致。入园需查验外来人员身份证件。</p></div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <strong class='text-gray-800 block mb-2'><i class='fa-solid fa-users text-gray-400 mr-1'></i>相关责任人</strong>
+            <div class='space-y-3'>
+                
+        <div class="flex items-center justify-between">
+            <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">电子园区：孙杰</span>
+            <a href="tel:13991490812" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">13991490812</a>
+        </div>
+        <div class="flex items-center justify-between">
+            <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">锦业园区：段楠楠</span>
+            <a href="tel:13892590914" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">13892590914</a>
+        </div>
+        <div class="flex items-center justify-between">
+            <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">草堂园区：常晓化</span>
+            <a href="tel:13572406236" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">13572406236</a>
+        </div>
+            </div>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js'></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

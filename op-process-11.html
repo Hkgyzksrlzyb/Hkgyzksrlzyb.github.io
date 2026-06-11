@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>外协合同办理</title>
+    <link href='https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css' rel='stylesheet'>
+    <link href='https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css' rel='stylesheet'>
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class='text-gray-800 pb-10'>
+    <div class='top-navbar px-4 py-3 flex items-center'>
+        <a href='javascript:history.back()' class='text-gray-500 hover:text-blue-600 px-2 py-1'><i class='fa-solid fa-arrow-left text-lg'></i></a>
+        <h2 class='ml-3 font-bold text-lg truncate'>外协合同办理</h2>
+    </div>
+
+    <div class='p-5 space-y-4'>
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-diagram-project text-rose-500 mr-2'></i>流程示意图</h3>
+            <div class='mermaid text-xs sm:text-sm'>
+graph TD
+A([SMS系统-外协与二配接收中心]) --> B[选择集中订单商务接收列表]
+B --> C[核对厂家价格备忘录]
+C --> D[执行系统单据定价落账]
+D --> E([走商务审批流 生成合同签办])
+style A fill:#ffe4e6,stroke:#f43f5e
+style E fill:#ffe4e6,stroke:#f43f5e,stroke-width:2px
+            </div>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-list-ul text-blue-500 mr-2'></i>基本信息</h3>
+            <ul class='space-y-2 text-gray-600'>
+                <li><strong class='text-gray-700'>适用场景：</strong>新员工首次办理外协商务工作、签署外协零件合同。</li>
+                <li><strong class='text-gray-700'>操作入口：</strong>园区网主页面 — 协同办公 — SMS系统 — 外协与二配 — 订单（集中订单商务接收/生产订单查询/生产订单定价辅助）— 合同等应用模块。</li>
+                <li><strong class='text-gray-700'>关键凭证：</strong>物料清单价格备忘录、与各厂家签署的价格备忘录、与各厂家确认的返所特种加工清单。</li>
+            </ul>
+        </div>
+
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <h3 class='font-bold text-gray-800 mb-3 flex items-center'><i class='fa-solid fa-list-ol text-rose-500 mr-2'></i>操作步骤（4步）</h3>
+            <ol class='list-decimal pl-5 space-y-2 text-gray-700'>
+                <li><strong>外协订单接收：</strong>在“外协与二配 — 订单 — 集中订单商务接收”中，订单类型选择“外协订单”，选择订单来源部门，检索本人负责厂家订单后点击“商务接收”。</li>
+                <li><strong>生产订单查询汇总：</strong>在“生产订单查询”界面输入接收人卡号和供应商编码，检索该厂家未议价订单清单，确认后导出汇总订单议价模板。</li>
+                <li><strong>外协商务议价：</strong>在“生产订单定价辅助”中输入未议价订单号、金属材料废屑抵扣率、返所特种加工费费率；录入废屑抵扣前价格和返所特种加工费，核对无误后“计算并保存”并“保存到合同明细”，上传价格支撑文件后点击“议价完成”。</li>
+                <li><strong>外协合同录入及审批：</strong>在“合同 — 外协合同录入”中按部门、采购方式归集订单并挂接合同，填写合同条目，上传议价资料扫描件，按合同金额送审，审批完成后与外协厂家签署正式合同。</li>
+            </ol>
+        </div>
+
+        <div class='bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm'><h3 class='font-bold text-yellow-800 mb-2 flex items-center'><i class='fa-solid fa-triangle-exclamation text-yellow-600 mr-2'></i>注意事项与历史错误案例</h3><ul class='list-disc pl-5 space-y-1 text-yellow-700'><li>具体操作前需先学习外协领域制度：《外协商务管理规定》《加工类外协业务询比价管理规定》《基于集中投产模式的外协商务管理实施细则》。</li><li><strong class="text-red-500">历史案例1：</strong>订单接收过程中如果选择了“非集中订单”，后续需要退回重做。</li><li><strong class="text-red-500">历史案例2：</strong>议价时需关注厂家供料方式变化对零件价格的影响，若前后供料方式不一致但价格相同，必须进一步核实。</li><li><strong class="text-red-500">历史案例3：</strong>“零件最小历史价”不一定是有效价格，需点击“历史议价”进一步确认。</li></ul></div>
+
+        
+        <div class='bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm'>
+            <strong class='text-gray-800 block mb-2'><i class='fa-solid fa-users text-gray-400 mr-1'></i>相关责任人</strong>
+            <div class="space-y-3">
+            <div class="flex items-center justify-between">
+                <span class="text-gray-600 block whitespace-nowrap overflow-hidden text-ellipsis mr-2">外协室 王燕</span>
+                <a href="tel:13709181872" class="text-blue-600 bg-blue-50 px-3 py-1 rounded shrink-0">13709181872</a>
+            </div></div>
+        </div>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js'></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

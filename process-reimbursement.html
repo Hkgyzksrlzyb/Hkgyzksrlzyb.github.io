@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>报销申请流程</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">报销申请流程</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <!-- 可视化流程图 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-orange-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+                graph TD
+                    A([登录网上报销系统]) --> B[选择报销单据类型<br/>填报信息并上传电子发票附件]
+                    B --> C[领导线上审批]
+                    C --> D{节点流转至<br/>待财务会计审核?}
+                    D -->|是| E[按首页格式要求<br/>打印并粘贴票据材料]
+                    E --> F[材料注明报销人/电话/<br/>单号/日期]
+                    F --> G([实体投递至财务审核室])
+                    
+                    style A fill:#ffedd5,stroke:#f97316
+                    style G fill:#ffedd5,stroke:#f97316,stroke-width:2px
+            </div>
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>员工完成费用发票开具及报销材料整理后发起线上报销审批</li>
+                <li><strong class="text-gray-700">操作入口：</strong>园区网首页-企业维 APP -> 网上报销 -> 导航栏报销填单</li>
+                <li><strong class="text-gray-700">财务审核室地址：</strong><br>📍锦业园区：1001a楼526室<br>📍电子园区：101楼204室</li>
+            </ul>
+        </div>
+
+        <!-- 避坑与注意 -->
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-yellow-600 mr-2"></i>注意事项 & 避坑指南</h3>
+            <ul class="list-disc pl-5 space-y-1 text-yellow-700 mb-3">
+                <li>按格式粘贴增值税专用发票，电子发票需要打印并粘贴。</li>
+                <li>报销前可阅读《差旅费管理办法》了解要求、标准及注意事项。</li>
+            </ul>
+            <div class="bg-yellow-100 p-3 rounded text-yellow-800">
+                <strong class="block mb-1"><i class="fa-solid fa-skull-crossbones mr-1"></i>历史错误案例 (退回/拒绝受理)：</strong>
+                <ol class="list-decimal pl-4 space-y-1 mt-1 text-xs">
+                    <li>仅投递纸质票据，未执行线上审批，或审批流未到“待财务会计审核”节点。</li>
+                    <li>线上系统中未将电子发票（增值税专用发票）上传至附件处。</li>
+                    <li>发票抬头信息错误：购买方开成个人、单位简称或税号错漏。</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- 联系人 -->
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <strong class="text-gray-800 block mb-2"><i class="fa-solid fa-phone-volume text-gray-400 mr-1"></i>相关责任人及咨询</strong>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="block text-gray-800 font-bold">陈雪芬</span>
+                        <span class="text-xs text-gray-500">报销系统运维 (流程部)</span>
+                    </div>
+                    <a href="tel:61888838" class="text-orange-600 bg-orange-50 px-3 py-1 rounded">61888838</a>
+                </div>
+                <div class="border-t border-gray-100 pt-2">
+                    <span class="block text-gray-800 font-bold mb-1">财务部费用审核组</span>
+                    <span class="text-xs text-gray-500 block mb-2">报销业务问题咨询</span>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="tel:61889701" class="text-orange-600 bg-orange-50 px-3 py-1 rounded">61889701</a>
+                        <a href="tel:61889702" class="text-orange-600 bg-orange-50 px-3 py-1 rounded">61889702</a>
+                        <a href="tel:61889703" class="text-orange-600 bg-orange-50 px-3 py-1 rounded">61889703</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</body>
+</html>

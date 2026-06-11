@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>上岗审查</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1"><i class="fa-solid fa-arrow-left text-lg"></i></a>
+        <h2 class="ml-3 font-bold text-lg truncate">上岗审查</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-red-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+graph TD
+A[保密管理平台发起申请] --> B[保密业务进入涉密人员管理]
+B --> C[上岗管理办理保密审查审批表]
+C --> D[在岗管理办理岗位界定调整审批表]
+D --> E[部门领导审批]
+E --> F[人力资源部领导审批]
+F --> G[保密办领导审批]
+G --> H[完成上岗保密资格审查]
+style A fill:#fee2e2,stroke:#ef4444
+style H fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>新员工入职后办理上岗保密资格审查。</li>
+                <li><strong class="text-gray-700">操作入口：</strong>园区网保密管理平台申请</li>
+            </ul>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-folder-open text-yellow-600 mr-2"></i>资料准备</h3>
+            <ul class="list-disc pl-5 space-y-1 text-yellow-700">
+                <li>因私出国（境）证件持有与出入境记录凭证（可通过国家移民管理相关 App 获取）。</li>
+                <li>无犯罪记录证明（可通过公安政务相关 App 获取）。</li>
+            </ul>
+        </div>
+
+        <div class="bg-red-50 rounded-xl shadow-sm p-4 border border-red-100 text-sm">
+            <h3 class="font-bold text-red-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-red-600 mr-2"></i>重要提醒</h3>
+            <ul class="list-disc pl-5 space-y-1 text-red-700">
+                <li>岗位选择“新员工岗”，密级选择“内部”。</li>
+                <li>使用期结束后方可申请进入涉密岗位工作。</li>
+                <li>上岗后未进行上岗资格审查，保密办将进行通报及处罚。</li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm flex items-center justify-between">
+            <div>
+                <strong class="text-gray-800 block mb-1">相关责任人</strong>
+                <span class="text-gray-600">人力：魏龙</span>
+            </div>
+            <a href="tel:13649237007" class="bg-blue-50 text-blue-600 px-3 py-2 rounded-lg font-bold"><i class="fa-solid fa-phone mr-1"></i> 13649237007</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>

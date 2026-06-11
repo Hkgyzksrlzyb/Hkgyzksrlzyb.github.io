@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>生产运营部流程大厅</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .module-card:active { transform: scale(0.98); transition: transform 0.1s; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="process.html" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">生产运营部 (4项)</h2>
+    </div>
+    <div class="p-5">
+        <p class="text-sm text-gray-500 mb-4">当前保留流程：需求投产、民机计划、外协合同与外协主流程。</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="op-list"></div>
+    </div>
+    <script>
+        const opItems = [
+            { file: "op-process-9.html", name: "需求投产", desc: "PMIS需求DP/MPS投产策划与下达", icon: "fa-gears", color: "emerald" },
+            { file: "op-process-10.html", name: "民机生产计划系统操作流程", desc: "MJ-PMIS系统操作", icon: "fa-plane-up", color: "sky" },
+            { file: "op-process-11.html", name: "外协合同办理", desc: "SMS外协与二配集中订单商务接收", icon: "fa-file-signature", color: "rose" },
+            { file: "op-process-12.html", name: "外协主要流程", desc: "质量体系文件9742端到端流程", icon: "fa-diagram-project", color: "slate" }
+        ];
+        
+        document.getElementById('op-list').innerHTML = opItems.map((item, idx) => `
+            <a href="${item.file}" class="block bg-white p-4 rounded-xl shadow-sm flex items-center module-card border-l-4 border-${item.color}-500">
+                <div class="bg-${item.color}-50 text-${item.color}-500 p-2 rounded mr-3 w-10 h-10 flex items-center justify-center shrink-0">
+                    <i class="fa-solid ${item.icon} text-lg"></i>
+                </div>
+                <div class="flex-1 overflow-hidden">
+                    <h3 class="font-bold text-gray-800 text-sm whitespace-nowrap truncate">${idx+1}. ${item.name}</h3>
+                    <p class="text-xs text-gray-400 mt-0.5 whitespace-nowrap truncate">${item.desc}</p>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-300 text-sm ml-2"></i>
+            </a>
+        `).join('');
+    </script>
+</body>
+</html>

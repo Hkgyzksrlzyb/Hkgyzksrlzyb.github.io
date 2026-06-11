@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>零星领用流程</title>
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f9fafb; -webkit-tap-highlight-color: transparent; }
+        .top-navbar { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+        .mermaid { overflow-x: auto; background: #fff; padding: 1rem; border-radius: 0.5rem; text-align: center; }
+    </style>
+</head>
+<body class="text-gray-800 pb-10">
+    <div class="top-navbar px-4 py-3 flex items-center">
+        <a href="javascript:history.back()" class="text-gray-500 hover:text-blue-600 px-2 py-1">
+            <i class="fa-solid fa-arrow-left text-lg"></i>
+        </a>
+        <h2 class="ml-3 font-bold text-lg">零星领用流程</h2>
+    </div>
+
+    <div class="p-5 space-y-4">
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-diagram-project text-indigo-500 mr-2"></i>流程示意图</h3>
+            <div class="mermaid text-xs sm:text-sm">
+                graph TD
+                    A([登录 SMS 系统]) --> B[进入: 库存业务-出库领用申请]
+                    B --> C[填写主表信息选择课题]
+                    C -.-> C1[无请购单选'自动', 有请购单选'已有请购单']
+                    C --> D[保存主表并选'手工录入明细']
+                    D --> E[填写物料明细及数量/需求日期]
+                    E --> F[保存明细以待送审]
+                    F --> G[点击'送审'并选择领导]
+                    G --> H([领导审批通过])
+                    
+                    style A fill:#e0e7ff,stroke:#6366f1
+                    style H fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center"><i class="fa-solid fa-list-ul text-blue-500 mr-2"></i>基本信息</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li><strong class="text-gray-700">适用场景：</strong>研发领料、试验、维修等日常零星耗材领用</li>
+                <li><strong class="text-gray-700">操作入口：</strong>SMS系统 ➡️ 库存业务 ➡️ 出库领用申请</li>
+            </ul>
+        </div>
+
+        <div class="bg-yellow-50 rounded-xl shadow-sm p-4 border border-yellow-100 text-sm">
+            <h3 class="font-bold text-yellow-800 mb-2 flex items-center"><i class="fa-solid fa-triangle-exclamation text-yellow-600 mr-2"></i>注意事项 & 避坑指南</h3>
+            <ul class="list-disc pl-5 space-y-1 text-yellow-700">
+                <li>主表中 <strong>*</strong> 号项必填。注意区分有无请购单的不同选择（自动创建 vs 已有清单并填单号）。</li>
+                <li>项目领域需根据物料使用场景选择：“JP”、“MJ”、“MP”。课题号只能选择点击白色方框，选“公用”。</li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-100 text-sm">
+            <strong class="text-gray-800 block mb-2"><i class="fa-solid fa-users text-gray-400 mr-1"></i>相关责任人</strong>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between"><span class="text-gray-600">闫平娟</span><a href="tel:18691951882" class="text-blue-600 bg-blue-50 px-3 py-1 rounded">18691951882</a></div>
+                <div class="flex items-center justify-between"><span class="text-gray-600">史佳豪</span><a href="tel:15191919950" class="text-blue-600 bg-blue-50 px-3 py-1 rounded">15191919950</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+</body>
+</html>
